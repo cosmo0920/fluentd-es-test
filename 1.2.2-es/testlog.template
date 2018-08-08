@@ -1,0 +1,31 @@
+{
+    "template" : "paaslog-*",
+        "settings": {
+            "index.number_of_shards": 18,
+            "index.refresh_interval": "3s",
+            "index.query.default_field": "querystring"
+        },
+        "mappings": {
+            "paaslog": {
+                "_source": { "enabled": true },
+                "properties" : {
+                    "log": { "type": "text"},
+                    "appid": { "type": "keyword"},
+                    "source": { "type": "keyword" },
+                    "container_name": { "type": "keyword"},
+                    "container_id": { "type": "keyword" },
+                    "time": { "type": "date", "format": "strict_date_optional_time||epoch_millis"},
+                    "usec": {"type": "long"},
+                    "HOST": { "type": "keyword" },
+                    "PORT": { "type": "keyword"},
+                    "PAAS_CLUSTER": { "type": "keyword"},
+                    "PAAS_TARGET": { "type": "keyword"},
+                    "MESOS_TASK_ID": { "type": "keyword"},
+                    "MARATHON_APP_ID": { "type": "keyword"},
+                    "MARATHON_APP_VERSION": { "type": "keyword"},
+                    "MARATHON_APP_DOCKER_IMAGE": { "type": "keyword"}
+                }
+            }
+        }
+}
+
