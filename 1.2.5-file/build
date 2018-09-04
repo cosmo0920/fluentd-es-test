@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker build -t fluentd-file:v1.2.5 -f Dockerfile .

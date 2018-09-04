@@ -1,4 +1,4 @@
-FROM fluent/fluentd:1.2.2-debian
+FROM fluent/fluentd:v1.2.5-debian
 
 RUN fluent-gem install fluent-plugin-elasticsearch
 
